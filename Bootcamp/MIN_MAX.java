@@ -1,27 +1,45 @@
-// finding the minimum and maximum element in the array
+public class MIN_MAX{
 
-public class MIN_MAX {
-    public static void main(String[] args){
+    // function for finding min
+    public static int findmin(int[] arr){
+        
+        int max = arr[0] ;
 
-        // Initializing the array and max with first element of array
-        int[] arr = { -1, 4 , 6 ,10 ,111 , 101 , 75 , 683 , 980} ; 
-        int min = arr[0] ; 
-        int max = arr[0] ; 
-
-        // Iterating through the list to find the maximum and minimum element 
-        for ( int i = 0 ; i < arr.length ; i++ ){
-            // max 
-            if (arr[i] > max ){
-                max = arr[i]; 
-            }
-            // min
-            if (arr[i] < min){
-                min = arr[i] ; 
+        for (int i = 0 ; i < arr.length ; i++){
+            if (arr[i] > max){
+                max = arr[i];
             }
         }
 
-        System.out.println("The min element in the array : "+ min);
-        System.out.print("The max element in the array : "+ max);
+        return max ; 
 
+    }   
+
+    // function for finding max
+    public static int findmax(int[] arr){
+        
+        int min = arr[0] ;
+
+        for (int i = 0 ; i < arr.length ; i++){
+            if (arr[i] < min){
+                min = arr[i];
+            }
+        }
+
+        return min ; 
     }
+
+    // main function
+    public static void main(String[] args){
+
+        // Initializing
+        int[] arr = { -1, 4 , 6 ,10 ,111 , 101 , 75 , 683 , 980} ; 
+
+        int min = findmin(arr);
+        int max = findmax(arr);
+        
+        System.out.println("The max element in the array : "+max);
+        System.out.print("The min element in the array : "+min);
+    }
+
 }
