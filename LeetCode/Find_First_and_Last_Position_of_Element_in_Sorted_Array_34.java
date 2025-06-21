@@ -31,18 +31,26 @@ class Solution {
     public int[] searchRange(int[] nums, int target) {
         int start = 0 ; 
         int last = 0 ; 
+        Boolean found = false ; 
         for (int i = 0 ; i < nums.length ; i++){
             if (nums[i] == target){
                 start = i ;
+                found = true;
                 break;
             }
         }
         for (int i = nums.length-1 ; i > 0 ; i --){
             if ( nums[i] == target){
                 last = i;
-                return new int[] {start , last};
+                break;
             }
         } 
+        
+        if (found == true){
+            return new int[] {start , last} ; 
+        }
+        else{
         return new int[] {-1 , -1};
+        }
     }
 }
