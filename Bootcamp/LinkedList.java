@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 class LinkedList {
 
     static class Listnode {
@@ -27,6 +29,49 @@ class LinkedList {
         }
         ptr.next = newnode;
         return head;
+    }
+
+    public static Listnode deleteAtHead(Listnode head){
+        if (head == null){
+            return null;
+        }
+        head = head.next ; 
+        return head;
+    }
+
+    public static Listnode deleteAtTail(Listnode head){
+        if (head == null){
+            return null ; 
+        }
+        
+        if (head.next == null){
+            head = null;
+            return head;
+        }
+
+        Listnode ptr = head ;
+        while (ptr.next.next != null){
+            ptr = ptr.next ; 
+        }
+        ptr = null ; 
+        
+        return head ;
+    }
+
+    public static int size(Listnode head) {
+        int count = 0;
+
+        if (head == null){
+            return count ; 
+        }
+
+        Listnode current = head;
+        
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
     }
 
     public static void traverse(Listnode head) {
