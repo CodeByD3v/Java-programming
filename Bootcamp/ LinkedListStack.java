@@ -1,4 +1,10 @@
-// Node class for linked list
+public class LinkedListStack {
+    private Node top;
+
+    public LinkedListStack() {
+        this.top = null;
+    }
+
 class Node {
     int data;
     Node next;
@@ -8,14 +14,6 @@ class Node {
         this.next = null;
     }
 }
-
-// Stack class using linked list
-public class LinkedListStack {
-    private Node top;
-
-    public LinkedListStack() {
-        this.top = null;
-    }
 
     // Push: Add element to top of stack
     public void push(int data) {
@@ -36,7 +34,6 @@ public class LinkedListStack {
         return value;
     }
 
-    // Peek: View the top element without removing
     public int peek() {
         if (top == null) {
             System.out.println("Stack is empty");
